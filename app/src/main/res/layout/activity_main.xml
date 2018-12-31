@@ -1,38 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
     android:orientation="vertical"
     android:padding="16dp"
     tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/firebase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/d"
+        android:contentDescription="@string/logo"
+        />
 
     <EditText
         android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
         android:layout_margin="5dp"
         android:hint="@string/email"
-        android:textColorLink="@android:color/holo_green_dark" />
+        android:inputType="textEmailAddress"
+        android:textColorLink="@android:color/holo_green_dark"
+        android:background="@drawable/input_background"
+        android:padding="15dp"/>
 
     <EditText
         android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPassword"
+        android:layout_margin="5dp"
         android:hint="@string/password"
+        android:inputType="textPassword"
         android:textColorLink="@android:color/holo_green_dark"
-        android:layout_margin="5dp"/>
+        android:background="@drawable/input_background"
+        android:padding="15dp"/>
 
     <Button
         android:id="@+id/login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
+        android:layout_margin="5dp"
+        android:background="@drawable/button_background"
         android:text="@string/log_in"
         android:textColor="@android:color/background_light"
-        android:layout_margin="5dp"
         />
 </LinearLayout>
