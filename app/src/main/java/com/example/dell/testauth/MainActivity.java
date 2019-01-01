@@ -35,11 +35,11 @@ public class MainActivity extends AppCompatActivity {
         authStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                if(firebaseAuth.getCurrentUser()!=null){
+                if(firebaseAuth.getCurrentUser()!=null) {
 
-                     startActivity(new Intent(MainActivity.this,Profile.class));
+                    Toast.makeText(MainActivity.this, "SuccessFull Sign in", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(MainActivity.this, Profile.class));
                 }
-                 // else user is not logged in
             }
         };
 
@@ -60,6 +60,13 @@ public class MainActivity extends AppCompatActivity {
         // IMP....
     }
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if(authStateListener != null){
+            auth.removeAuthStateListener(authStateListener);
+        }
+    }
 
    private void startSignIn(){
         //
@@ -74,6 +81,9 @@ public class MainActivity extends AppCompatActivity {
                     if (!task.isSuccessful()) {
                         // if credentials are wrong
                         Toast.makeText(MainActivity.this, "Sign in Problem", Toast.LENGTH_SHORT).show();
+                    }else {
+                        Toast.makeText(MainActivity.this,"Successfull",Toast.LENGTH_SHORT).show();
+
                     }
                 }
             });
