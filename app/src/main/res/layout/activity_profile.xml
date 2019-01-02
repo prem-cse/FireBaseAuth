@@ -5,16 +5,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-
+    android:background="@drawable/input_background"
     tools:context=".Profile">
 
     <TextView
+        android:id="@+id/signedIn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:text="@string/successfully_signed_in"
-        android:textColor="#59f63e"
+        android:textColor="#FF10EB1B"
         android:textSize="50sp" />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/signedIn"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/tick"/>
 
     <Button
         android:id="@+id/signout"
