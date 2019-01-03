@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/colorPrimary"
+    tools:context=".SignUpActivity">
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        android:textColorLink="@android:color/holo_green_dark"
+        android:background="@drawable/input_background"
+        android:padding="15dp"/>
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:textColorLink="@android:color/holo_green_dark"
+        android:background="@drawable/input_background"
+        android:padding="15dp"/>
+
+    <Button
+        android:id="@+id/signup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/button_background"
+        android:text="@string/sign_up"
+        android:textColor="@android:color/background_light"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="---------------------OR----------------------"
+        android:layout_margin="10dp"
+        android:textColor="#ffffffff"
+        android:textSize="20dp"
+        android:layout_gravity="center_horizontal"
+        />
+   <com.google.android.gms.common.SignInButton
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:id="@+id/google"></com.google.android.gms.common.SignInButton>
+    <Button
+        android:id="@+id/back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="#ff0000"
+        android:text="@string/go_back"
+        android:textColor="@android:color/background_light" />
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progessbar"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        android:indeterminate="true"
+        android:indeterminateTintMode="src_atop"
+        android:indeterminateTint="#ffffffff"
+        />
+
+</LinearLayout>
