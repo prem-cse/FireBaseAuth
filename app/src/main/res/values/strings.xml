@@ -90,4 +90,10 @@
 
     <string name="id_fmt">User ID: %s</string>
     <string name="email_fmt">Email: %s</string>
+    <string name="facebook_app_id">131855324432907</string>
+    <string name="fb_login_protocol_scheme">fb131855324432907</string>
+    <string name="get_started">Get Started</string>
+    <string name="google_sign_in">Google Sign in</string>
+    <string name="facebook_sign_in">Facebook sign in</string>
+
 </resources>

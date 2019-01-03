@@ -49,11 +49,11 @@ public class SignUpActivity extends AppCompatActivity {
     private EditText email; //#ffcb2b
     private EditText password;
     private Button signUp;
-    private Button Goback;
     private ProgressBar progressBar;
-    private SignInButton google;
+    private Button google;
     private static final int RC_SIGN_IN = 101;
     private GoogleApiClient mGoogleApiClient;
+    private Button fb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,9 +63,9 @@ public class SignUpActivity extends AppCompatActivity {
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
         signUp = findViewById(R.id.signup);
-        Goback = findViewById(R.id.back);
         progressBar = findViewById(R.id.progessbar);
         google = findViewById(R.id.google);
+        fb = findViewById(R.id.fb);
 
         auth = FirebaseAuth.getInstance();
         authStateListener = new FirebaseAuth.AuthStateListener() {
@@ -80,20 +80,18 @@ public class SignUpActivity extends AppCompatActivity {
             }
         };
 
-        Goback.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(SignUpActivity.this,MainActivity.class));
-            }
-        });
-
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 doSignUp();
             }
         });
-
+        fb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SignUpActivity.this,FacebookLoginActivity.class));
+            }
+        });
         // Configure Google Sign In
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
@@ -113,8 +111,8 @@ public class SignUpActivity extends AppCompatActivity {
         google.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                signIn(); // shorter
-               // startActivity(new Intent(SignUpActivity.this,GoogleSignInActivity.class));
+              //  signIn(); // shorter
+                startActivity(new Intent(SignUpActivity.this,GoogleSignInActivity.class));
             }
         });
 
